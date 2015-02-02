@@ -19,7 +19,9 @@
 $execstart=$start=microtime(true);
 include "functions.php";
 include "config.php";
-import_request_variables("gp","r_");
+
+//import_request_variables("gp","r_");
+extract($_REQUEST, EXTR_PREFIX_ALL|EXTR_REFS, 'r');
 
 if (!isset($r_select)) {
    $r_select="files";
